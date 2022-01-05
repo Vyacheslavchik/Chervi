@@ -1,15 +1,26 @@
 package game.objects;
 
 public class Card {
-    private String suit;
+    private String suit;//масть
     private int ranc;
-    private String picture;
-    Player onwer;
+    private int points;
+    Player host;
 
-    public Card( String suit,int ranc){
+    public Card( String suit,int ranc,int points){
         this.suit=suit;
         this.ranc=ranc;
-        picture = suit+ranc+".jpg";  //change later
+        this.points=points;
     }
 
+    public String getSuit() {
+        return suit;
+    }
+
+    public int getRanc() {
+        return ranc;
+    }
+
+    public int getPoints() {
+        return points;
+    }
 }
