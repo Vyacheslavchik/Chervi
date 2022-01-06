@@ -4,7 +4,7 @@ public class Card {
     private String suit;//масть
     private int ranc;
     private int points;
-    Player host;
+    public Player host;
     public int ochkiZaVziatku;
 
     public Card( String suit,int ranc,int points){
