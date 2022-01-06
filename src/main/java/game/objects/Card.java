@@ -5,6 +5,7 @@ public class Card {
     private int ranc;
     private int points;
     Player host;
+    public int ochkiZaVziatku;
 
     public Card( String suit,int ranc,int points){
         this.suit=suit;

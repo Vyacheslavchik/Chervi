@@ -22,4 +22,13 @@ public class GameTable {
         return coloda;
     }
 
+    public Card vziatka (Card card1,Card card2,Card card3,Card card4){
+        int ochkiZaVziatku = card1.getPoints()+card2.getPoints()+card3.getPoints()+card4.getPoints();
+        if(card1.getSuit().equals(card2.getSuit()) && card1.getRanc()<card2.getRanc()) card1=card2;
+        if(card1.getSuit().equals(card3.getSuit()) && card1.getRanc()<card3.getRanc()) card1=card3;
+        if(card1.getSuit().equals(card4.getSuit()) && card1.getRanc()<card4.getRanc()) card1=card4;
+        card1.ochkiZaVziatku=ochkiZaVziatku;
+        return card1;
+    }
+
 }
