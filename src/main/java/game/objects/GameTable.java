@@ -1,14 +1,12 @@
 package game.objects;
 
+import java.util.Random;
+
 public class GameTable {
     public static Card coloda[] = GameTable.makeColod();
     public GameTable (String namePlayer){
         Player players [] = {new Player(namePlayer),new Player("Din"),new Player("Sam"),new Player("Kas")};
-        System.out.println("fdgfgd");
         getCardsToPlayers(players);
-        System.out.println("fdgfgd");
-        for(int i =0;i<52;i++)
-            System.out.println(coloda[i].host.getName() + " "+coloda[i].getSuit()+coloda[i].getRanc());
     }
 
     private static Card[] makeColod(){
@@ -27,12 +25,20 @@ public class GameTable {
         return coloda;
     }
     private void getCardsToPlayers(Player players []){
-        for(int q=0,w=1,e=2,r=3;r<52;q=+4,w=+4,e=+4,r=+4){
+          for(int q=0,w=1,e=2,r=3;r<52;q+=4,w+=4,e+=4,r+=4){
             coloda[q].host=players[0];
             coloda[w].host=players[1];
             coloda[e].host=players[2];
             coloda[r].host=players[3];
         }
+          Random rnd = new Random();
+          for(int i=0;i<52;i++){
+              int a=rnd.nextInt(51);
+              int b=rnd.nextInt(51);
+              Player p=coloda[a].host;
+              coloda[a].host=coloda[b].host;
+              coloda[b].host=coloda[a].host;
+          }
     }
 
     private Card vziatka (Card card1,Card card2,Card card3,Card card4){
