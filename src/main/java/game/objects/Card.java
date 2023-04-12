@@ -24,4 +24,8 @@ public class Card {
     public int getPoints() {
         return points;
     }
+    @Override
+    public String toString(){
+        return "Karta";
+    }
 }
